@@ -31,7 +31,7 @@ function you_age() {
     let info = "";
     if (you_mark()  && you_age() ){
         info += "А ты ктрутой что-ли?";
-        document.getElementById("link").href = "http://online-simpsons.ru/season-16/358-16-sezon-17-seriya.html";
+        document.getElementById("link").href = "./Задание2.html";
         document.getElementById("link").textContent = info;
     }
     else{
