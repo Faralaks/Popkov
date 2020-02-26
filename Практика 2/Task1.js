@@ -11,7 +11,7 @@ function print() {
     if (!good_mark) info += "У тебя слишком плохие оценки, чувак!  ";
     if (good_mark && good_ege) {
         info += "Ты идеально нам подходишь!"
-        document.getElementById("link").href  = "https://yandex.ru";
+        document.getElementById("link").href  = "./task2_and_task3.html";
         document.getElementById("link").textContent  = "Теперь ты достоен нажать на меня"
     }
 
