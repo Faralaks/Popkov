@@ -1,14 +1,18 @@
 let val, len;
 let x, y, k, n, p, q;
+let real = false;
 
 
 function check() {
     let msg = "";
-    if (parseInt(document.getElementsByName("answer")[0].value) !== k*n) {
-        msg += "Вы ошиблись во втором задании(<br>"
+    if (parseInt(document.getElementsByName("answer1")[0].value) !== x*y) {
+        msg += "Вы ошиблись в первом задании( "
     }
-    if (document.getElementsByName("checkbox")[0].checked && parseInt(document.getElementsByName("answer")[0].value) !== k*n) {
-        msg += "Вы ошиблись во втором задании(<br>"
+    if (parseInt(document.getElementsByName("answer2")[0].value) !== k*n) {
+        msg += "Вы ошиблись во втором задании( "
+    }
+    if ((document.getElementsByName("checkbox")[0].checked && !real) || (!document.getElementsByName("checkbox")[0].checked && real)) {
+        msg += "Вы ошиблись в третьем задании( "
     }
     if (msg === "") msg = "Ти красаучик!";
     document.getElementById("msg").textContent = msg;
@@ -33,7 +37,7 @@ window.onload = function() {
             val = (i*j).toString();
             len = val.length;
             if (i === x && j === y) {
-                document.write("<td><input type='text' maxlength=\""+len+"\" size=\""+len+"\"></td>");
+                document.write("<td><input name='answer1' type='text' maxlength=\""+len+"\" size=\""+len+"\"></td>");
             }
             else {
                 document.write("<td>" + new Array((3 - len) + 1).join("&nbsp;&nbsp;") + val + "</td>");
@@ -45,17 +49,19 @@ window.onload = function() {
     k = rounded_rnd(1, 9);
     n = rounded_rnd(1, 9);
     len = (k*n).toString().length
-    document.write("<p>"+k+"x"+n+"=<input type='text' name=\"answer\" maxlength=\""+len+"\" size=\""+len+"\"></p>\n<br>");
+    document.write("<p>"+k+"x"+n+"=<input type='text' name=\"answer2\" maxlength=\""+len+"\" size=\""+len+"\"></p>\n<br>");
 
     p = rounded_rnd(1, 9);
     q = rounded_rnd(1, 9);
     if (Math.random()>0.5) {
         val = (p*q).toString();
+        real = true;
     }
     else {
         val = (p*(q - 1)).toString();
     }
-    document.write(x+"x"+y+"="+val+"?<input type=\"checkbox\" name=\"checkbox\">Это верно</p>");
+
+    document.write(p+"x"+q+"="+val+"?<input type=\"checkbox\" name=\"checkbox\">Это верно</p>");
     document.write("<input type=\"button\" onclick=\"check()\" value='Проверить'>");
     document.write("<p id='msg'></p>");
 
