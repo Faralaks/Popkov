@@ -12,10 +12,6 @@ function answers() {
 }
 function changes() {
     document.getElementById("res").value = "Тыкни для проверочки";
-   if (document.getElementById("res").hidden = true){
-       document.getElementById("res").hidden = false
-   }
-   if (document.getElementById("art").hidden = true){
-       document.getElementById("art").hidden = true
-   }
+    document.getElementById("res").hidden = false;
+    document.getElementById("art").hidden = true;
 }
