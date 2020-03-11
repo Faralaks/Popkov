@@ -21,6 +21,21 @@ function check() { // проверяет где допущены ошибки
 
 }
 
+ function checkFigure(x, y) {
+    console.log([x, y, shapeIndex, colorIndex, x === shapeIndex, y === colorIndex]);
+    if (x === shapeIndex && y === colorIndex) {
+        console.log(true);
+        document.getElementById("loseImg").hidden = true;
+        document.getElementById("winImg").hidden = false;
+    }
+    else {
+        console.log(false);
+        document.getElementById("loseImg").hidden = false;
+        document.getElementById("winImg").hidden = true;
+    }
+
+ }
+
 
 function shuffle(array) { // функция для перемешивания массива
   let curIndex = array.length, tempVal, rndVal;
@@ -85,12 +100,12 @@ document.write("<input type=\"button\" onclick=\"check()\" value='Провери
 document.write("<p id='msg'></p><hr>\n<h2>А делить то ты умеешь?</h2>");
 
 function getShape(array) { // Показывает форму в соответствии с выбранны ответом
-    let shapes = ["Треугольник", "Круг", "Прямоугольник"];
+    let shapes = ["Прямоугольник", "Круг", "Треугольник"];
     shapeIndex = array.indexOf(document.getElementById("ans1Select").value);
     document.getElementById("shapeName").textContent = shapes[shapeIndex];
 }
 function getColor(array) { // показывает цвет в соответствии с выбранным ответом
-    let colors = ["Розовый", "Зелёный", "Голубой"];
+    let colors = ["Зелёный", "Голубой", "Розовый"];
     colorIndex = array.indexOf(document.getElementById("ans2Select").value);
     document.getElementById("colorName").textContent = colors[colorIndex];
 }
@@ -117,7 +132,20 @@ document.write("<p>"+ u*v + "/ " +
         <option>${ansColor[1]}</option>\n
         <option>${ansColor[2]}</option>\n</select>` +
     " = " + v + "</p>\n<p id='colorName'></p>");
-
+document.write(`<img src='./chose_figure.jpg' alt='сорян, картинка не прогрузилась, дальше ты не пройдешь' usemap='#zone' width='491' height='290'>
+       <map name='zone'>
+        <area shape='rect' coords='11, 13, 160, 75' onclick='checkFigure(0, 0)'>
+        <area shape='rect' coords='210, 11, 400, 80' onclick='checkFigure(0, 1)'>
+        <area shape='rect' coords='235, 170, 460, 250' onclick='checkFigure(0, 2)'>
+        <area shape='circle' coords='270,130,25' onclick='checkFigure(1, 0)'>
+        <area shape='circle' coords='347,125,20' onclick='checkFigure(1, 1)'>
+        <area shape='circle' coords='160,140,52' onclick='checkFigure(1, 2)'>
+        <area shape='poly' coords='380,150,434,76,485,153' onclick='checkFigure(2, 0)'>
+        <area shape='poly' coords='135,200,225,200,180,262' onclick='checkFigure(2, 1)'>
+        <area shape='poly' coords='12,97,175,270,12,270' onclick='checkFigure(2, 2)'>
+       </map>`);
 
 document.write("<input type='button' onclick='location.reload()' value='Списите, помогите, уберите, хочу заново, хочу на ручки!'>");
+document.write("<img src='lose_img.jpg' width='512' height='288' hidden  alt='Ты проигррал, чувак, тебя скушала рыбка, RIP!' id='loseImg'>");
+document.write("<img src='win_img.jpg' width='512' height='288' hidden alt='Ты выиграл, чувак, скушай рыбку!' id='winImg'>");
 
