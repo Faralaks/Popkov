@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> Картина </title>
+    <meta charset="utf-8" />
+
+</head>
+<body>
+<img src="./KartinabyAlenina.jpg" alt="БИБА" usemap="#zone" width="497" height="398">
+<map name="zone">
+    <area shape="rect"  coords="171, 32, 327, 106" onclick="result(0,2)">
+    <area shape="rect"  coords="337, 168, 464, 235" onclick="result(1,2)" >
+    <area shape="rect"  coords="31, 293, 173, 368" onclick="result(2,2)">
+    <area shape="circle" coords="242,200,40" onclick="result(1,0)">
+    <area shape="circle"   coords="76,64,40" onclick="result(2,0)">
+    <area shape="circle"  coords="393,319,50" onclick="result(0,0)">
+    <area shape="poly" coords="371,108,418,24,465,108" onclick="result(1,1)">
+    <area shape="poly"  coords="200,369,258,280,314,369" onclick="result(2,1)">
+    <area shape="poly"  coords="32,248,91,153,153,246" onclick="result(0,1)">
+</map>
+<script type="text/javascript" src="Script5.js"></script>
+<br>
+<img src="win.jpg" hidden="true" id="win" alt="biba" width="497" height="398">
+<img src="lose.jpg" hidden="true" id="lose" alt="biba" width="497" height="398">
+
+</body>
+</html>

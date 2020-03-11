@@ -35,14 +35,14 @@ function table() {
     document.write("   Ответ верен", "<input type='checkbox' id='flag'>");
 
 }
-let x,y,z,c,ch;
+let x,y,z,c;
 x = random(1,9);
 y = random(1,9);
 r = random(0,1);
 z = b * y + r;
 
 function check_flag(){
-    if (b * y !== z && document.getElementById('flag').checked == true || b * y === z && document.getElementById('flag').checked == false){
+    if (b * y !== z && document.getElementById('flag').checked === true || b * y === z && document.getElementById('flag').checked === false){
         return false;
     }
     else {
@@ -53,7 +53,7 @@ function check_flag(){
 
 function check(){
     c = document.getElementById('answer').value;
-    if (a * x == c && check_flag()){
+    if (a * x === c && check_flag()){
         document.write("Ты молодец!");
     }
     else {
