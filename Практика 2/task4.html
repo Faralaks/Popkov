@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>4 Четыре 4</title>
+    <script type="text/javascript"  src="task4.js"></script>
+</head>
+<body>
+    <h1>Похоже, ты соскучился по викторинам</h1>
+    <hr>
+    <h2>Что означает имя Алина?</h2>
+    <label for="q1r1">«Ангел»</label><input type="radio" id="q1r1" name="q1" value="1" onchange="clear_res()">
+    <label for="q1r2">«Возрожденная»</label><input type="radio" id="q1r2" name="q1" value="2" onchange="clear_res()">
+
+    <h2>Что означает имя Михаил?</h2>
+    <label for="q2r1">«Богу подобный»</label><input type="radio" id="q2r1" name="q2" value="1" onchange="clear_res()">
+    <label for="q2r2">«Победитель»</label><input type="radio" id="q2r2" name="q2" value="2" onchange="clear_res()">
+
+    <h2>Сколько ёжику лет?</h2>
+    <label for="q3r1">18</label><input type="radio" id="q3r1" name="q3" value="1" onchange="clear_res()">
+    <label for="q3r2">72</label><input type="radio" id="q3r2" name="q3" value="2" onchange="clear_res()">
+    <label for="q3r3">&infin;</label><input type="radio" id="q3r3" name="q3" value="3" onchange="clear_res()">
+    <label for="q3r4">Еще не родился</label><input type="radio" id="q3r4" name="q3" value="4" onchange="clear_res()">
+
+    <hr>
+    <input type="button" id="check_btn" onclick="check_ans()" value="Проверить">
+    <img src="img_task4.png" id="imgOk" alt="Ни шмагла загузица, сарян, братиш" hidden>
+
+
+
+</body>
+</html>
