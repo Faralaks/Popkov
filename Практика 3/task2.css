@@ -1,0 +1,35 @@
+body {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
+#ya_baton {
+    color: white;
+    user-select: none;
+    background: red;
+    padding: 10px 30px;
+    font-size: 30pt;
+}
+
+.blocks {
+    margin-top: 20px;
+    height: 200px;
+    width: 200px;
+    font-size: 20px;
+
+}
+
+#first {
+    background: red;
+}
+
+#second {
+    background: green;
+}
+
+.labeledEdit {
+    padding-top: 60px;
+    padding-left: 15px;
+    color: white;
+}
+
