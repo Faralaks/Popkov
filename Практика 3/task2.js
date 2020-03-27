@@ -5,15 +5,6 @@ function saveText(newValue) {
     text = newValue;
 }
 
-
-function enter() {
-    document.getElementById("ya_baton").style.cursor = "pointer";
-}
-function leave() {
-    document.getElementById("ya_baton").style.cursor = "default";
-}
-
-
 function change() {
     baton = $("#ya_baton");
     if (status) {

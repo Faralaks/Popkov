@@ -9,6 +9,7 @@ body {
     background: red;
     padding: 10px 30px;
     font-size: 30pt;
+    cursor: pointer;
 }
 
 .blocks {
