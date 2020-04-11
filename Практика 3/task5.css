@@ -1,0 +1,11 @@
+table {
+    border: solid 7px red;
+    outline: 2px solid blue;
+}
+td {
+    border: solid 3px red;
+}
+.dotted{
+    background: grey;
+    border-style: dotted
+}
