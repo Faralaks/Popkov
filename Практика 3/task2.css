@@ -20,17 +20,14 @@ body {
 
 }
 
-#first {
-    background: red;
-}
-
-#second {
-    background: green;
-}
-
 .labeledEdit {
     padding-top: 60px;
     padding-left: 15px;
     color: white;
+}
+
+.anotherStyle:link, .anotherStyle:visited, .anotherStyle:hover, .anotherStyle:active {
+    color: red;
+    text-decoration: none;
 }
 

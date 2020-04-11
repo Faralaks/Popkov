@@ -9,14 +9,20 @@
 </head>
 <body>
     <span id="ya_baton" onclick="change()">Отжата</span>
-    <div id="first" class="blocks">
+    <div id="first" class="blocks" style="background: red;">
         <div class="labeledEdit">
             <label for="text1" id="lab1">Заполни меня </label><input type="text" id="text1" onchange="saveText(this.value)">
         </div>
     </div>
-    <div id="second" class="blocks" hidden>
+
+    <div id="second" class="blocks" style="background: green;" hidden>
         <div class="labeledEdit">
             <label for="text2" id="lab2">Заполни меня тоже </label><input type="text" id="text2" onchange="saveText(this.value)">
+        </div>
+        <div style="padding-left: 15px;">
+            <label>
+                <input type="checkbox" onchange="changeLinkKind(this.checked)"><a id="link" href="task3.html" style="padding-left: 5px" >Клик</a>
+            </label>
         </div>
     </div>
 </body>

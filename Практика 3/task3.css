@@ -1,0 +1,22 @@
+.btn {
+    color: white;
+    padding: 5px 6px 3px ;
+    background: rgb(64,199,129);
+    box-shadow: 0 -3px rgb(53,167,110) inset;
+}
+.btn:hover {
+    background: rgb(53, 167, 110);
+}
+.btn:active {
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33,147,90) inset;
+}
+
+#even {
+    visibility: collapse
+}
+#btn21 {
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}

@@ -26,3 +26,14 @@ function change() {
     }
 
 }
+
+function changeLinkKind(value) {
+    let link = $("#link");
+    if (value) {
+        link.addClass( "anotherStyle");
+    }
+    else {
+        link.removeClass("anotherStyle");
+    }
+
+}

@@ -5,15 +5,25 @@ function startDich() {
     n++;
     btn.type = "button";
     btn.value = 'best';
-    btn.id = n.toString();
+    btn.name = n.toString();
+    btn.className = "btn";
     btn.onclick = function () {
-        alert(this.id)
+        alert("I am the "+ this.name)
     };
     if (n % 2 === 0) {
-        btn.className  = "even";
+        btn.id  = "even";
         document.body.append(btn);
     }
     else {
+        if (n === 21) {
+            btn.className = "btn";
+            btn.id = "btn21";
+            btn.value =  "back";
+            btn.onclick = function () {
+                location.href = "task2.html"
+            };
+            console.log("BTN21")
+        }
         document.body.append(btn);
     }
     if (n % 10 === 0) {
