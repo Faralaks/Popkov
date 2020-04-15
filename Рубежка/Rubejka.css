@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: x-large;
+}
+
+#settingsBlock {
+    width: 300px;
+}
+
+#reversiLabel, #reversi {
+    margin-left:  5px;
+    cursor: pointer;
+}
+
+table {
+    outline: 5px solid crimson;
+}
+td {
+    border: solid 1px black;
+}
+
+.colorSqr {
+    height:  20px;
+    width: 20px;
+    margin: 6px 6px 20px 6px;
+}
+
+#color1 {
+    background: red;
+}
