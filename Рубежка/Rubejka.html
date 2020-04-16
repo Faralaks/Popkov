@@ -11,26 +11,31 @@
     <fieldset id="settingsBlock">
         <legend>Управление таблицей</legend>
         <div id="sizesBlock">
-            <label for="sizeX"><input type="text" id="sizeX" maxlength="2" size="3" value="3">x</label><input type="text" id="sizeY" maxlength="2" size="3" value="2"><br>
+            <label for="sizeX"><input type="text" class="numFields"  id="sizeX" maxlength="2" size="3" value="3">x</label>
+            <input type="text" class="numFields"  id="sizeY" maxlength="2" size="3" value="2"><br>
+
             <label for="reversi" id="reversiLabel"><input type="checkbox" id="reversi" >Reversi?</label><br>
             <input  type="button" value="Generate" onclick="regenTable()">
         </div>
     </fieldset>
 
+    <label for="colorR">R:<input type="number" class="numFields" id="colorR" min="0" max="200" value="0"></label>
+    <label for="colorG">G:<input type="number" class="numFields"  id="colorG" min="0" max="200" value="0"></label>
+    <label for="colorB">B:<input type="number" class="numFields"  id="colorB" min="0" max="200" value="0"></label>
+    <input type="button" value="Добавить цвет" onclick="addColor()"><br>
+    <input type="button" value="Удалить цвет" onclick="delColor()">
+    <input type="button" value="Сортировать цвета" onclick="sortColors()">
+
+    <br>
+    <span id="errors" hidden></span>
+    <hr>
+
+    <div id="color1" onclick="changeColor()"></div>
+
     <div id="colorsBlock">
-        <div class="colorSqr" id="color1" onclick="changeColor()"></div>
     </div>
     <table id="myTable">
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
+
 
     </table>
 </body>
