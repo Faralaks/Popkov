@@ -9,33 +9,33 @@
 </head>
 <body>
 
-<p id="main" onclick="showLoginForm()">
-    <div id="fullScreen">
-        <div id="loginWindow">
-            Авторизуйтесь!
-            <div  id="loginForm">
-                <label>
-                    Логин
-                    <input type="text" class="textFields" id="login">
-                </label><br>
+<div id="fullScreen">
+    <div id="loginWindow">
+        Авторизуйтесь!
+        <div  id="loginForm">
+            <label>
+                Логин
+                <input type="text" class="textFields" id="login">
+            </label><br>
 
-                <label>Проверить Логин<input type="checkbox" id="checkLogin"></label><br>
-                <label for="level">Уровень</label><select id="level">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select><br>
-                <div id="murkyBtn" onclick="hideLoginForm()">
-                    Начать уже
-                </div>
+            <label>Проверить Логин<input type="checkbox" id="checkLogin"></label><br>
+            <label for="level">Уровень</label>
+            <select id="level">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select><br>
+            <div id="murkyBtn" onclick="hideLoginForm()">
+                Начать уже
             </div>
         </div>
     </div>
-</p>
+</div>
 
-<a href="#main">Вызвать всплывающее окно</a>
+
+<p onclick="showLoginForm()" style="cursor: pointer">Войти</p>
 
 </body>
 </html>
