@@ -5,7 +5,7 @@
     <title>Вся практика в одном фале</title>
     <script type="text/javascript" src="jquery-3.4.1.js"></script>
     <script type="text/javascript" src="tasks.js"></script>
-    <link rel="stylesheet" type="text/css" href="login_form.css">
+    <link rel="stylesheet" type="text/css" href="tasks.css">
 </head>
 <body>
 
@@ -18,7 +18,7 @@
                 <input type="text" class="textFields" id="login">
             </label><br>
 
-            <label>Проверить Логин<input type="checkbox" id="checkLogin"></label><br>
+            <label>Заменить при совпадени<input type="checkbox" id="checkLogin"></label><br>
             <label for="level">Уровень</label>
             <select id="level">
                 <option>1</option>
@@ -27,15 +27,52 @@
                 <option>4</option>
                 <option>5</option>
             </select><br>
-            <div id="murkyBtn" onclick="hideLoginForm()">
+            <div class="murkyBtn" onclick="hideLoginForm()">
                 Начать уже
             </div>
+            <span id="cancel" onclick="justHide()">Отменить</span>
+        </div>
+    </div>
+
+    <div id="addWindow" hidden>
+        Добавьте результаты <br>
+        в следующем формате
+        login:result
+        <div  id="addForm">
+            <label>
+                <input type="text" class="textFields" id="data">
+            </label><br><br>
+            <div class="murkyBtn" onclick="addResult()">
+                Добавить уже
+            </div>
+            <span onclick="justHide()">Отменить</span>
         </div>
     </div>
 </div>
 
 
-<p onclick="showLoginForm()" style="cursor: pointer">Войти</p>
+<div class="murkyBtn"  onclick="showLoginForm()">Авторизоваться повторно</div>
+
+
+<div class="blocks" id="casesBlock">
+</div>
+
+<div id="sessionsBar">
+    <div class="murkyBtn" onclick="showResultWindow()">Добавить еще результатов</div>
+    <div class="blocks" id="sessions">
+
+    </div>
+</div>
+
+
+<div id="results" style="background: #72c1e6" hidden>
+    <span id="wrongCount">0</span>
+    <span id="rightCount" >1</span>
+    <span id="middleCount" >0.5</span>
+    <span id="mark" >69</span>
+    <span id="final" >999</span>
+</div>
+
 
 </body>
 </html>

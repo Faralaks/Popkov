@@ -1,0 +1,123 @@
+body, .textFields {
+    font-family: "Times New Roman", sans-serif;
+    font-size: x-large;
+}
+body {
+    background: purple
+    url("pikchura.jpeg")
+    no-repeat center center;
+    color: yellow;
+}
+.textFields {
+    color: red;
+}
+
+#main {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.blocks {
+    display: inline-block;
+}
+#sessionsBar {
+    float:right
+
+}
+
+
+#loginWindow, #addWindow {
+    width: 300px;
+    height: 230px;
+    text-align: center;
+    padding: 15px;
+    border: 3px solid rgba(162, 1, 0, 0.8);
+    border-radius: 10px;
+    color: #0050cc;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: yellow;
+}
+
+#fullScreen {
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#main:target {display: block;}
+
+
+.murkyBtn {
+    padding-top: 15px;
+    cursor: pointer;
+    height: 45px;
+    width: 290px;
+    background: black;
+    color: orange;
+    border: 3px solid red;
+    border-radius: 15px;
+}
+.murkyBtnLittle, .okBtn, .wrongBtn {
+    margin-left: 5px;
+    display: inline-block;
+    padding-top: 2px;
+    padding-left: 15px;
+    cursor: pointer;
+    height: 30px;
+    width: 130px;
+    background: black;
+    color: orange;
+    border: 3px solid red;
+    border-radius: 15px;
+}
+#murkyBtn, .murkyBtnLittle:hover {color: #72c1e6;}
+#murkyBtn, .murkyBtnLittle:active {color: white}
+
+.okBtn {
+    cursor: none;
+    background: green;
+    height: 30px;
+    width: 50px;
+    color: white;
+}
+.wrongBtn {
+    cursor: none;
+    background: red;
+    height: 30px;
+    width: 100px;
+    color: white;
+}
+
+
+span {
+    margin-left: 10px;
+}
+
+#wrongCount {
+    color: red;
+}
+#rightCount {
+    color: green;
+}
+#middleCount {
+    color: blue;
+}
+#mark {
+    color: orange;
+}
+#final {
+    color: black;
+}
+
