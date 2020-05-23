@@ -1,0 +1,28 @@
+body {
+    font-family: "Arial", sans-serif;
+    font-size: 2em;
+    counter-reset: qNumber;
+}
+h1::before {
+    counter-increment: qNumber;
+    content: "№" counter(qNumber) " ";
+}
+
+.liBefore {
+    cursor: pointer;
+}
+.liBefore:hover {
+    background: lightyellow;
+}
+.liAfter {
+    background: white;
+}
+
+#resDiv {
+    width: 200px;
+    height: 70px;
+    background: blue;
+    color: yellow;
+    text-align: center;
+    margin: auto;
+}
