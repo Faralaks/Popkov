@@ -26,3 +26,22 @@ h1::before {
     text-align: center;
     margin: auto;
 }
+.murkyBtn {
+    padding-top: 10px;
+    padding-left: 10px;
+    cursor: pointer;
+    height: 45px;
+    width: 185px;
+    background: black;
+    color: orange;
+    border: 3px solid red;
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.murkyBtn:hover {color: #72c1e6;}
+.murkyBtn:active {color: white}
+
+td {
+    text-align: center;
+}
