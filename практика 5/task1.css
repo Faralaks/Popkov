@@ -1,0 +1,26 @@
+table, td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+div.aligneDiv{
+     position: absolute;
+     left : 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);}
+
+td:hover {background-color: lightyellow ;}
+
+.X {color: red;}
+
+.O {color: blue;}
+
+pre {font-size:4.5em;}
+
+pre > table { width:200px; height:200px; text-align:center;}
+
+table.tableClass {border: 3px solid; outline: 2px solid black;}
+
+table.tableClassX {outline-color:red;}
+
+table.tableClassO {outline-color:blue;}
