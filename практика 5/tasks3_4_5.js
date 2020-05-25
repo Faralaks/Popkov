@@ -2,6 +2,7 @@ let count = -1;
 let trueAnses = 0;
 let users = [];
 let resTd = [];
+let julik = false;
 
 let qs = [
     ["Добро пожаловать. ну что, начнем?", 0, "Да", 0, "Нет", 1, "Пойду ка я, от греха по дальше"],
@@ -51,8 +52,12 @@ function deactivate(e, right=0) {
         for (let i = 2; i <= 6; i+=2) {
             let newLi = document.createElement("li");
             newLi.textContent = qs[count][i];
-            newLi.onclick = function () { deactivate(this, parseInt(qs[count][i-1])) }
+            newLi.id = qs[count][i-1];
+            newLi.onclick = function () { deactivate(this, qs[count][i-1]) };
             newLi.className = "liBefore";
+            if (julik && qs[count][i-1] === 0) {
+                newLi.classList.add("liJulik");
+            }
             newUl.append(newLi);
         }
         vic.append(newUl);
@@ -91,11 +96,60 @@ function addUser() {
     document.getElementById("vic").innerHTML  = "";
     trueAnses = 0;
     count = -1;
+    julik = false;
+    remakeHideDiv();
     deactivate();
 
 
 }
 
+function becomeJulik() {
+    if (!julik) {
+        julik = true;
+        let elems = document.getElementsByClassName("liBefore");
+        for (let i = 0; i < elems.length; i++) {
+            if (elems[i].id === "0") {
+                elems[i].classList.add("liJulik");
+            }
+        }
+    }
+    else {
+        julik = false;
+        let elems = document.getElementsByClassName("liBefore");
+        for (let i = 0; i < elems.length; i++) {
+            if (elems[i].id === "0") {
+                elems[i].classList.remove("liJulik");
+            }
+        }
+    }
+}
+
+function rounded_rnd(min, max) { // возвращает псевдослучайное целое число в заданном диапазоне. возможно неравномерное распределение
+    let rnd = Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log("min = ", min, "max = ", max, "rnd = ", rnd);
+    return rnd;
+}
+
+
+function remakeHideDiv() {
+    let prevHideDiv = document.getElementById("hideDiv");
+    if (prevHideDiv) { prevHideDiv.remove(); }
+    document.getElementById("julikDiv").hidden = true;
+
+    let hiddenDiv = document.createElement("div");
+    hiddenDiv.id = "hideDiv";
+    hiddenDiv.style.marginLeft = rounded_rnd(0, 1000).toString() + "px";
+    hiddenDiv.style.marginTop = rounded_rnd(0, screen.height).toString() + "px";
+    hiddenDiv.onclick = function () {
+        document.getElementById("julikDiv").hidden = false;
+        this.remove();
+    };
+    document.body.append(hiddenDiv);
+};
+
 window.onload = function () {
+    remakeHideDiv();
     deactivate();
 };
+
+
