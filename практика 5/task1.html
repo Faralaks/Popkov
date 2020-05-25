@@ -7,7 +7,12 @@
     <script src="task1.js"></script>
 </head>
 <body onload="filltable()">
-    <div class="aligneDiv">
+<div id="btnDiv">
+    <input class="murkyBtn" type="button" id="addColBtn" onclick="addCol()" value="&rarr;"> <br>
+    <input class="murkyBtn" type="button" id="addRowBtn" onclick="addRow()" value="&darr;">
+
+</div>
+<div class="aligneDiv">
     <pre>
         <table class="tableClass tableClassX" id="TableToFill"></table>
     </pre>
