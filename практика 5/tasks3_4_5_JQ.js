@@ -17,6 +17,7 @@ function showTable() {
 
 }
 
+
 function deactivate(e, right=0) {
     let anses = document.getElementsByTagName("li");
     let vic = document.getElementById("vic");
@@ -29,19 +30,13 @@ function deactivate(e, right=0) {
 
     count++;
     if (count >= qs.length) {
-        let resultDiv = document.createElement("div");
-        resultDiv.id = "resDiv";
-        resultDiv.textContent = "Правильных ответов "+trueAnses;
-
-        let baton = document.createElement("div");
-        baton.className = "murkyBtn";
-        baton.textContent = "Сохранить!";
-        baton.onclick = function () {
-            showTable();
-        };
+        let resultDiv = $(`<div id='resDiv'>Правильных ответов ${trueAnses}</div>`);
+        let baton = $("<div class='murkyBtn'>Сохранить</div>")
+            .click(function () {
+                showTable();
+            });
         resultDiv.append(baton);
-        vic.append(resultDiv);
-
+        $("#vic").append(resultDiv);
     }
     else {
         let newH1 = document.createElement("h1");
@@ -66,30 +61,25 @@ function deactivate(e, right=0) {
 }
 
 function addUser() {
-    let newUserField = document.getElementById("username");
-    let newUser = newUserField.value;
+    let newUser = $("#username").val();
     if (newUser === "") { alert("Слыш, забыл ввести имя!"); return}
 
     let idx = users.indexOf(newUser);
     if (idx !== -1) {
-        resTd[idx].textContent = trueAnses.toString();
+        resTd[idx].text(trueAnses);
         alert("Результат обновлен!");
 
     }
     else {
         users.push(newUser);
-        let newTr = document.createElement("tr");
+        let newTr = $("<tr></tr>")
+            .append($(`<td>${newUser}</td>`))
 
-        let newNameTd = document.createElement("td");
-        newNameTd.textContent = newUser;
-        newTr.appendChild(newNameTd);
-
-        let newResTd = document.createElement("td");
-        newResTd.textContent = trueAnses.toString();
+        let newResTd = $(`<td>${trueAnses}</td>`);
         resTd.push(newResTd);
-        newTr.appendChild(newResTd);
+        newTr.append(newResTd);
 
-        document.getElementById("resTable").append(newTr);
+        $("#resTable").append(newTr);
     }
     document.getElementById("resData").hidden  = true;
     document.getElementById("vic").hidden  = false;
@@ -132,20 +122,18 @@ function rounded_rnd(min, max) { // возвращает псевдослуча�
 
 
 function remakeHideDiv() {
-    let prevHideDiv = document.getElementById("hideDiv");
-    if (prevHideDiv) { prevHideDiv.remove(); }
-    document.getElementById("julikDiv").hidden = true;
+    $("#hideDiv").remove();
+    $("#julikDiv").hide();
 
-    let hiddenDiv = document.createElement("div");
-    hiddenDiv.id = "hideDiv";
-    hiddenDiv.style.marginLeft = rounded_rnd(0, 1000).toString() + "px";
-    hiddenDiv.style.marginTop = rounded_rnd(0, screen.height).toString() + "px";
-    hiddenDiv.onclick = function () {
-        document.getElementById("julikDiv").hidden = false;
-        this.remove();
-    };
-    document.body.append(hiddenDiv);
-};
+    let hiddenDiv = $("<div id='hideDiv'></div>")
+        .css("margin-left", rounded_rnd(0, 1000))
+        .css("margin-top", rounded_rnd(0, screen.height))
+        .click( function () {
+            $("#julikDiv").show();
+            this.remove();
+        });
+    $("body").append(hiddenDiv);
+}
 
 window.onload = function () {
     remakeHideDiv();
